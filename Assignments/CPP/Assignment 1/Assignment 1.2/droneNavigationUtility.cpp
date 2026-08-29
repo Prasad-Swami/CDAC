@@ -49,4 +49,6 @@ int main(){
     cout << "Degrees to Radians: " << toRadians(degrees) << endl;
     cout << "The Restricted Minimum and Maximum Value are: " << clamp(value, minVal, maxVal) << endl;
     cout << "The Safe Zone Area is: " << isInSafeZone(x, y, cx, cy, radius) << endl;
+
+    return 0;
 }
