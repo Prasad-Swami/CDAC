@@ -15,7 +15,7 @@ when we do padding there is equal size to all parameters
 struct Layout2{int i; char c1; char c2;};
 /*explain -
 int 4 byte - 1 1 1 1 = 4bytes
-char 1 byte -1 1 0 o = 4bytes 
+char 1 byte -1 1 0 0 = 4bytes 
 char 1 byte- null pad reason that 1 continous next to
               1st char cause its have empty space to access.
 */
