@@ -95,6 +95,22 @@ class Product{
 
 };
 
+double reorderCost(int qty, double unitPrice){
+    return qty * unitPrice;
+}
+
+double reorderCost(double qty, double unitPrice){
+    return qty * unitPrice;
+}
+
+double reorderCost(int qty, double unitPrice, double taxRate){
+    return (qty * unitPrice) + (taxRate * (unitPrice * qty)/100);
+}
+
+double applyDiscount(double price, double discountPercent = 10.0){
+    return price * discountPercent/100;
+}
+
 int main(){
     int size; 
     cout << "Enter the total products you want to enter: " <<endl;
@@ -135,7 +151,7 @@ int main(){
         }
     }
     
-     
+    
 
     // Product p1;
     // Product p2;
@@ -153,6 +169,11 @@ int main(){
     // p3.setTotalValue();
     // p3.displayDetails();
     
-    
+    for(int i = 0; i < size; i++){
+        cout << "Calculate Restocking Cost: " << products[i].getname() << " "<< reorderCost(products[i].getquantity(), products[i].getprice()) << endl;
+        cout << "Calculate Restocking Cost with tax: " << products[i].getname() << " "<< reorderCost(products[i].getquantity(), products[i].getprice(), 8.3) << endl;
+        cout << "The Total discound applied: " << products[i].getname() << " "<< applyDiscount(products[i].getTotalValue()) << endl;
+
+    }
     return 0;
 }
