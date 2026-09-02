@@ -72,7 +72,7 @@ class Product{
         }
 
 
-        bool isLowStock(int threshold) const{
+        bool isLowStock() const{
             if(quantity < threshold){
                 cout << "<- LOW STOCK";
                 return true;
@@ -80,11 +80,13 @@ class Product{
             return false;
         }
 
-        
+        int getThreshold() const{
+            return threshold;
+        }
 
         void displayDetails() const{
             
-            cout << productId << "   " << name << "      " << price << "       " << quantity << "     " <<  getTotalValue() << "     " <<isLowStock(threshold) << endl;
+            cout << productId << "   " << name << "      " << price << "       " << quantity << "     " <<  getTotalValue() << "     " <<isLowStock() << endl;
 
             
         }
@@ -107,11 +109,33 @@ int main(){
     }
     
     cout << "=============== INVENTORY REPORT ===============" << endl;
-    cout << "ID" << "    Name " << "     Price " << "    Qty " << "     Total Value " << endl;
+    cout << "ID" << "    Name " << "     Price " << "    Qty " << "     Total Value " << " Status" << endl;
 
     for(int i = 0; i < size ; i++){
         products[i].displayDetails();
     }
+
+    double highest_value = 0.0;
+    string highest_product;
+    string lowstockproduct;
+
+    for(int i = 0; i < size; i++){
+        if(products[i].getTotalValue() > highest_value){
+            highest_value = products[i].getTotalValue();
+            highest_product = products[i].getname();
+        }
+    }
+
+    cout << "Highest Value Product: " << highest_product << " " << highest_value << endl;
+
+
+    for(int i = 0; i < size; i++){
+        if(products[i].isLowStock()){
+            cout << " (threshold)  " << products[i].getname() << endl;
+        }
+    }
+    
+     
 
     // Product p1;
     // Product p2;
