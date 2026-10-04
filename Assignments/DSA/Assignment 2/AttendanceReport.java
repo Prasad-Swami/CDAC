@@ -35,7 +35,7 @@ public class AttendanceReport {
 			System.out.println("Eligible:No");
 		return false;
 	}
-	
+	//Longest Streak work is not completed yet
 	static void longestStreak(int att[], int value) {
 		int bestCount = 0;
 		int currCount = 0;
