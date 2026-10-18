@@ -1,0 +1,145 @@
+AKSF assignment 1
+
+query 1
+select e.first_name, e.last_name, d.department_name
+from employee e left join department d
+ON e.department_id = d.department_id
+where e.department_id is not null; 
+
+query 2
+select e.*, d.department_name from employee e
+left join department d
+ON e.department_id = d.department_id
+where e.salary > 50000 AND d.department_name = 'IT'; 
+
+query 3
+select e.first_name, e.last_name, d.department_name
+from employee e left join department d
+on e.department_id = d.department_id
+where first_name LIKE 'J%' AND email LIKE '%specialforce.com%';
+
+query 4
+select distinct department_name from department;
+
+query 5
+select sum(e.salary) as total_salary_expenditure , d.department_name
+from employee e left join department d
+on e.department_id = d.department_id
+group by d.department_name;
+
+query 6
+select avg(e.salary) as avg_salary_finance, d.department_name
+from employee e left join department d
+on e.department_id = d.department_id
+where department_name = 'Finance';
+
+query 7
+select min(e.salary) as min_salary, max(e.salary) as max_salary, d.department_name
+from employee e left join department d
+on e.department_id = d.department_id
+where department_name = 'Sales';
+
+query 8
+select d.department_name, count(e.employee_id)
+from employee e left join department d
+on e.department_id = d.department_id
+group by d.department_name;
+
+query 9
+select * from employee
+where hire_date between '2018-01-01' AND '2020-12-31'
+order by hire_date asc;
+
+query 10
+select * from employee
+where email = null;
+
+query 11
+select e.*, d.department_name
+from employee e left join department d
+ON e.department_id = d.department_id
+where d.department_name in ('IT', 'HR', 'Finance');
+
+query 12
+select first_name, last_name, salary from employee
+where salary between 30000 AND 70000
+order by salary desc;
+
+TMT
+T1
+start transaction;
+savepoint t0;
+UPDATE employee e join department d
+on e.department_id = d.department_id
+SET e.salary = (0.05*e.salary)+e.salary 
+WHERE d.department_name = 'HR';
+ 
+T2
+savepoint t1;
+
+UPDATE employee e join department d
+on e.department_id = d.department_id
+set e.salary = (0.03*e.salary)+e.salary
+WHERE d.department_name = 'Sales';
+
+T3
+rollback to savepoint t1;
+
+T4
+commit;
+
+Query 13
+select e.*, d.department_name 
+from employee e left join department d
+on e.department_id = d.department_id;
+
+Query 14
+select e.*, p.* from project p join employee e
+on p.department_id = e.department_id
+where p.start_date > '2023-01-01';
+
+Query 15
+select d.*, e.* from 
+department d left join employee e
+ON d.department_id = e.department_id;
+
+Query 16
+select d.department_name, sum(e.salary)
+from employee e left join department d
+on e.department_id = d.department_id
+group by d.department_name ;
+
+Query 19
+alter table employee
+add column phone_num varchar(15);
+
+Query 20
+alter table project
+add column budget decimal(10, 2);
+
+Query 21
+
+select * from employee
+where salary = (
+select max(salary)
+from employee
+where salary < (
+select max(salary)
+from employee
+)
+);
+
+select * from employee
+order by salary desc
+limit 1 offset 1;
+
+Query 22
+select * from employee
+order by salary desc
+limit 1 offset 2;
+
+Query 23 / 18
+drop table project;
+
+Query 24 /17
+truncate table employee;
