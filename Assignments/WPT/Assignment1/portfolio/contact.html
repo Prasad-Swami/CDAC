@@ -7,7 +7,9 @@
 
     </head>
     <body>
-        <form action="https://www.google.com" method="post">
+        <h1 class="contact-h1">Contact Me</h1>
+        <p class="contact-intro">Have a question or want to work together?</p>
+        <form action="https://www.google.com" method="post" class="contact-form">
             <label>Name :</label>
             <input type="text" placeholder="Joe" required>
             <br>
@@ -16,16 +18,26 @@
             <input type="email" placeholder="xyz@gmail.com" required>
             <br>
             <br>
+
             <label>Preferred Contact Date :</label required>
+            <div class="radio-group">
+                <input type="radio" value="email" name="contact-mode">
+                <label>Email</label>
+                <input type="radio" value="Phone" name="contact-mode">
+                <label>Phone</label>
+            </div>
             <input type="date">
             <br>
             <br>
-            <label>Enquiry Type</label>
-            <input type="radio"><label>Name</label>
-            <input type="radio"><label>Message</label>
-            <input type="radio"><label>CV file</label>
+            <!-- <label>Enquiry Type</label>
+            <input type="radio"><label>Name</label> -->
+            <label>Message: </label>
+            <textarea id="message" name="message" placeholder="Write your message..." rows="5"></textarea>
+            <br><br>
+            <label>Upload CV:</label>
             <br>
-            <label>Select the file</label>
+            <br>
+            <label>Select the file: </label>
             <input type="file" placeholder="select">
             <br>
             <br>
