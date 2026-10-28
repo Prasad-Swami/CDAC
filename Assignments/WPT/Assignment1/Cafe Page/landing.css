@@ -1,0 +1,90 @@
+.la-h1{
+   
+    font-size: 40px;
+    color: white;
+    padding: 15px;
+    
+
+}
+
+#la-sec-0{
+    display: flex;
+    align-items: center;
+    background-color: #795548;
+    gap:37%;
+}
+
+#img{
+    margin-left: 10px;
+}
+
+.la-p1{
+    text-align: center;
+    font-size: 25px;
+    
+}
+
+.la-d1{
+    background-color: #795548;
+    color: white;
+    padding: 50px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.la-d2{
+    background-color: #795548;
+    color: white;
+    padding: 30px;
+    width: 250px;
+    border-radius: 20px;;
+
+}
+
+.sec-d12{
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+}
+
+.la-m1{
+    text-align: center;
+    background-color: #795548;
+    width: 350px;
+    padding: 30px;
+    border-radius: 30px;
+    color: white;
+}
+
+#la-p2-s1{
+    font-size: 26px;
+
+}
+
+#la-p2-s2{
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    padding: 10;
+    border-radius: 25px;
+}
+
+#la-h3{
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    background-color: wheat;
+}
+
+.la-sec{
+    display: flex;
+    gap: 30px;
+}
+
+body{
+    background-image: url(https://imgs.search.brave.com/lt1gOmarWiU51GkPfK1SqTLmIDvgDv96d2VfK7PXOvM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTYv/MDUwLzQxNi9zbWFs/bC93YXJtLXdoaXRl/LWNhZmUtcGhvdG8u/anBn);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
